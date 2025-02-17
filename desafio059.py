@@ -23,101 +23,109 @@ while opcao != 8:
     print('=-=' * 10)
     acao = int(input('>>>>> Qual opção deseja acessar? '))
 
-    if acao == 1:
+    match acao:
 
-        print(f'O resultado da soma dos números {n1} e {n2} é {n1 + n2}')
+        case 1:
 
-    elif acao == 2:
+            print(f'O resultado da soma dos números {n1} e {n2} é {n1 + n2}')
 
-        print(f'O resultado da multiplicação dos números {n1} e {n2} é {(n1 * n2):.2f}')
+        case 2:
 
-    elif acao == 3:
+            print(f'O resultado da multiplicação dos números {n1} e {n2} é {(n1 * n2):.2f}')
 
-        print('''Ordem dos fatores disponíveis:
+        case 3:
 
-                [ 1 ] n1 - n2
-                [ 2 ] n2 - n1
-        ''')
+            print('''Ordem dos fatores disponíveis:
 
-        ordemdosfatores = int(input('Qual das ordens de fatores deseja seguir:'))
+                    [ 1 ] n1 - n2
+                    [ 2 ] n2 - n1
+            ''')
 
-        if ordemdosfatores == 1:
+            ordemdosfatores = int(input('Qual das ordens de fatores deseja seguir:'))
 
-            print(f'O resultado da subtração entre {n1} e {n2} é {n1 - n2}')
+            match ordemdosfatores:
 
-        elif ordemdosfatores == 2:
+                case 1:
 
-            print(f'O resultado da subtração entre {n2} e {n1} é {n2 - n1}')
+                    print(f'O resultado da subtração entre {n1} e {n2} é {n1 - n2}')
 
-    elif acao == 4:
+                case 2:
 
-        print('''Ordem dos fatores disponíveis:
+                    print(f'O resultado da subtração entre {n2} e {n1} é {n2 - n1}')
 
-                        [ 1 ] n1 / n2
-                        [ 2 ] n2 / n1
-                ''')
+        case 4:
 
-        ordemdosfatores = int(input('Qual das ordens de fatores deseja seguir:'))
+            print('''Ordem dos fatores disponíveis:
 
-        if ordemdosfatores == 1:
+                            [ 1 ] n1 / n2
+                            [ 2 ] n2 / n1
+                    ''')
 
-            print(f'O resultado da subtração entre {n1} e {n2} é {n1 / n2}')
+            ordemdosfatores = int(input('Qual das ordens de fatores deseja seguir:'))
 
-        elif ordemdosfatores == 2:
+            match ordemdosfatores:
 
-            print(f'O resultado da subtração entre {n2} e {n1} é {n2 / n1}')
+                case 1:
 
-    elif acao == 5:
+                    print(f'O resultado da subtração entre {n1} e {n2} é {n1 / n2}')
 
-        if n1 > n2:
+                case 2:
 
-            print(f'O numero {n1} é maior do que o numero {n2}')
+                    print(f'O resultado da subtração entre {n2} e {n1} é {n2 / n1}')
 
-        elif n1 < n2:
+        case 5:
 
-            print(f'O numero {n2} é maior do que o numero {n1}')
+            if n1 > n2:
 
-        elif n1 == n2:
+                print(f'O numero {n1} é maior do que o numero {n2}')
 
-            print(f'Os números {n1} e {n2} são iguais')
+            elif n1 < n2:
 
-    elif acao == 6:
+                print(f'O numero {n2} é maior do que o numero {n1}')
 
-        print(f'''
-                Qual dos fatores você deseja obter a fatorial?
-                
-                [ 1 ] n1 = {n1}
-                [ 2 ] n2 = {n2}
-''')
-        fatorial = int(input('Qual das opções deseja realizar: '))
+            elif n1 == n2:
 
-        if fatorial == 1:
+                print(f'Os números {n1} e {n2} são iguais')
 
-            f1 = factorial(n1)
+        case 6:
 
-            print(f'O Fatorial de {n1} é {f1}!')
+            print(f'''
+                    Qual dos fatores você deseja obter a fatorial?
+                    
+                    [ 1 ] n1 = {n1}
+                    [ 2 ] n2 = {n2}
+    ''')
+            fatorial = int(input('Qual das opções deseja realizar: '))
 
-        elif fatorial == 2:
+            match fatorial:
 
-            f2 = factorial(n2)
+                case 1:
 
-            print(f'O Fatorial de {n2} é {f2}!')
+                    f1 = factorial(n1)
 
-    elif acao == 7:
+                    print(f'O Fatorial de {n1} é {f1}!')
 
-        print('Informe os números novamente:')
+                case 2:
 
-        n1 = float(input('Escolha um numero: '))
+                    f2 = factorial(n2)
 
-        n2 = float(input('Escolha um numero: '))
+                    print(f'O Fatorial de {n2} é {f2}!')
 
-    elif acao == 8:
+        case 7:
 
-        print('Finalizando serviços...')
-        break
+            print('Informe os números novamente:')
 
-    else:
+            n1 = float(input('Escolha um numero: '))
 
-        print('Opção invalida, tente novamente!')
+            n2 = float(input('Escolha um numero: '))
+
+        case 8:
+
+            print('Finalizando serviços...')
+            break
+
+        case _:
+
+            print('Opção invalida, tente novamente!')
 
 print('Fim do programa, volte sempre!')
